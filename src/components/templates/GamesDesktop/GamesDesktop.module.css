@@ -1,0 +1,243 @@
+/* html body {
+    background: linear-gradient(225deg, rgba(32, 70, 149, 1) 0%, rgba(232, 65, 37, 1) 60%, rgba(245, 136, 46, 1) 100%);
+    margin: 0px;
+    font-family: Open Sans;
+} */
+
+#videoplayer .jw-icon-pip {
+    display: none !important;
+}
+
+.containerBox {
+    display: grid;
+    gap: 10px;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 10px;
+    grid-template-columns: none !important;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.contentScroll {
+    position: relative;
+    display: grid;
+    grid-template-columns: 0 1fr 0;
+    grid-gap: 0;
+}
+
+.contentArrow {
+    position: static;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    z-index: 1;
+}
+
+.product {
+    display: grid;
+    gap: min(3vh, 16px);
+    grid-auto-flow: column;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    padding-top: min(4vh, 20px);
+    padding-bottom: min(4vh, 20px);
+    padding-right: min(4vh, 20px);
+    box-sizing: border-box;
+}
+
+.cardProduct {
+    width: 50vh;
+    max-width: 200px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-gap: 0px;
+    background: transparent;
+    border-radius: min(4vh, 8px);
+    overflow: hidden;
+    user-select: none;
+    text-decoration: none;
+    box-shadow: 0 0 4px #42424233;
+    cursor: pointer;
+}
+
+.cardProductImage {
+    height: 50vh;
+    width: 50vh;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.cardProductImageFit {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.cardProductContent {
+    padding: 3vh 2vh;
+    display: grid;
+    grid-template-rows: 1fr auto min(6.5vh, 20px);
+    grid-gap: min(1.5vh, 4px);
+    padding-top: min(3vh, 12px);
+    padding-bottom: min(3vh, 12px);
+    padding-left: min(2vh, 10px);
+    padding-right: min(2vh, 10px);
+}
+
+.cardProductTxtTitle {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: min(5.5vh, 16px);
+    color: #ffffff;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: min(2vh, 4px);
+}
+
+.cardProductTxtPrice {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 700;
+    font-size: min(6.3vh, 18px);
+    color: #121212;
+}
+
+.cardProductTxtSpan {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    color: #8f8f8f;
+}
+
+.cardProductButtonPlay {
+    padding: 3px 9px 9px 9px;
+    border-radius: 8px;
+    border: none;
+    font-size: 10px;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(130.47deg, #37a8da 5.6%, #00628b 93.94%);
+    text-decoration: none;
+    text-align: center;
+}
+
+.contentArrow {
+    position: static;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    z-index: 1;
+}
+
+.arrowRight {
+    margin-left: max(-11vh, -38px);
+}
+
+.arrowBox {
+    height: 59px;
+    width: 59px;
+    /* background: #FFFFFF;
+    border-radius: 100%;
+    box-shadow: #0000003d 0 3px 8px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    user-select: none;
+}
+
+.arrowIconRight {
+    position: absolute;
+    right: -4px;
+}
+
+.hiddenArrow {
+    display: none;
+}
+
+@media (min-height: 1920px) {
+    .content {
+        /* gap: 3vw; */
+        /* padding: 4vw 0 0; */
+        width: 100%;
+    }
+
+    .contentScroll {
+        overflow-x: auto;
+        overflow-y: scroll;
+    }
+
+    .product {
+        gap: 3vw;
+        padding: 1vw 4vw 5vw;
+        display: grid;
+        grid-auto-flow: row;
+        overflow-x: auto;
+        overflow-y: scroll;
+        grid-template-columns: repeat(4, 1fr);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .cardProduct {
+        width: 44.5vw;
+        height: max-content;
+        border-radius: min(4vw, 8px);
+        margin: auto;
+    }
+
+    .cardProductImage {
+        height: 44.5vw;
+        width: 44.5vw;
+    }
+
+    .cardProductTxtTitle {
+        font-size: min(5.2vw, 16px);
+        margin-bottom: min(2vw, 4px);
+    }
+
+    .containerBox {
+        grid-template: none;
+    }
+
+    .arrowLeft {
+        display: none;
+    }
+
+    .arrowRight {
+        display: none;
+    }
+
+    #videoplayer {
+        height: 220px !important;
+        width: 100% !important;
+    }
+}
+@media (max-width: 550px) {
+    .product {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+@media (max-width: 720px) {
+    .product {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
